@@ -1,0 +1,375 @@
+import "./Home.css"
+import profileBlob from "../assets/profile-blob.png"
+import contactBlob from "../assets/contact-blob.png"
+import legalxlk from "../assets/legalxlk.png"
+import java from "../assets/java.png"
+import python from "../assets/python.png"
+import javascript from "../assets/javascript.png"
+import html from "../assets/html.png"
+import css from "../assets/css.png"
+import react from "../assets/react.png"
+import git from "../assets/git.png"
+import figma from "../assets/figma.png"
+import axure from "../assets/axure.png"
+import postman from "../assets/postman.png"
+import springboot from "../assets/springboot.png"
+import mysql from "../assets/mysql.png"
+import ticketbooking from "../assets/ticketbookingsystem.png"
+import cleanwaves from "../assets/cleanwaves.png"
+
+
+const Home = () => {
+  return (
+    <div className="portfolio">
+      <header>
+        <div className="logo">
+          <a href="/">Shivanka Maddumarachchi.</a>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="/" className="active">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/work">Work</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section className="hero">
+          <div className="hero-content">
+            <h1>
+              <span className="front">FRONT</span> <span className="and">end</span>
+              <br />
+              DESIGNER AND
+              <br />
+              DEVELOPER
+            </h1>
+            <p className="intro">Hello, I'm Shivanka.</p>
+            <p className="description">
+            I am an Undergraduate Computer science student at Informatics Institute of Technology (IIT), affiliated with the University of Westminster. I am a passionate UI/UX designer and web developer who loves creating intuitive and visually engaging digital experiences. With a strong focus on design and development, I craft modern web and mobile applications using the latest technologies. Constantly eager to learn and innovate, I thrive on turning ideas into functional and aesthetically pleasing solutions.
+            </p>
+            <p className="cta">Feel free to take a look at my latest projects on Work page</p>
+            <div className="buttons">
+              <a href="/cv" className="btn btn-primary">
+                Download CV
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M7 7l5 5 5-5" />
+                  <path d="M7 13l5 5 5-5" />
+                </svg>
+              </a>
+              <a href="/work" className="btn btn-secondary">
+                Work
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div className="hero-image">
+            <div className="image-container">
+              <img src={profileBlob || "/placeholder.svg"} alt="3D abstract shape" />
+            </div>
+          </div>
+        </section>
+
+        <section className="skills">
+  <h2>TECHNOLOGIES I USE</h2>
+  <div className="skill-container">
+    <div className="skill-category">
+      <h3>Programming Languages</h3>
+      <div className="skill-icons">
+        <div className="skill-icon">
+          <img src={java || "/placeholder.svg"} alt="Java" />
+          <span>Java</span>
+        </div>
+        <div className="skill-icon">
+          <img src={python || "/placeholder.svg"} alt="Python" />
+          <span>Python</span>
+        </div>
+        <div className="skill-icon">
+          <img src={javascript || "/placeholder.svg"} alt="JavaScript" />
+          <span>JavaScript</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="skill-category">
+      <h3>Web Development</h3>
+      <div className="skill-icons">
+        <div className="skill-icon">
+          <img src={html || "/placeholder.svg"} alt="HTML" />
+          <span>HTML</span>
+        </div>
+        <div className="skill-icon">
+          <img src={css || "/placeholder.svg"} alt="CSS" />
+          <span>CSS</span>
+        </div>
+        <div className="skill-icon">
+          <img src={react || "/placeholder.svg"} alt="React" />
+          <span>React</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="skill-category">
+      <h3>DevOps and Tools</h3>
+      <div className="skill-icons">
+        <div className="skill-icon">
+          <img src={git || "/placeholder.svg"} alt="Git" />
+          <span>Git</span>
+        </div>
+        <div className="skill-icon">
+          <img src={figma || "/placeholder.svg"} alt="Figma" />
+          <span>Figma</span>
+        </div>
+        <div className="skill-icon">
+          <img src={axure || "/placeholder.svg"} alt="Azure" />
+          <span>Axure</span>
+        </div>
+        <div className="skill-icon">
+          <img src={postman || "/placeholder.svg"} alt="Postman" />
+          <span>Postman</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="skill-category">
+      <h3>Backend Development</h3>
+      <div className="skill-icons">
+        <div className="skill-icon">
+          <img src={springboot || "/placeholder.svg"} alt="Spring Boot" />
+          <span>Spring Boot</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="skill-category">
+      <h3>Database</h3>
+      <div className="skill-icons">
+        <div className="skill-icon">
+          <img src={mysql || "/placeholder.svg"} alt="MySQL" />
+          <span>MySQL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        <section className="recent-work">
+          <h2>RECENT WORK</h2>
+
+          <div className="project">
+            <div className="project-content">
+              <h3>LegalX LK, an AI powered website for Lawyers</h3>
+              <p>
+                Worked as a UI/UX designer and frontend developer for LegalX LK, a web-based legal management system. Designed Figma prototypes and developed key frontend components using React, including authentication pages, settings, and an AI chatbot interface. Contributed to AI-powered document summarization, task scheduling, real-time gazette updates, and RBAC for secure user management. Also assisted in building an Acts web scraper for automating legal document retrieval, ensuring usability, accessibility, and efficiency in legal workflows.
+              </p>
+              <a href="https://legalxlk.com" className="btn btn-link">
+                Go to the Website
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <div className="project-image">
+              <img src={legalxlk || "/placeholder.svg"} alt="LegalX LK Project" />
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-content">
+              <h3>Real time Ticket Booking System</h3>
+              <p>
+              Developed a real-time concurrent ticketing system using Java (Spring Boot) and Angular, leveraging multi-threading and the Producer-Consumer pattern for synchronized ticket releases and purchases. Implemented WebSockets for real-time updates, ensuring a responsive user experience. The system features thread-safe transactions, JSON-based data storage, and a CLI interface, enabling efficient ticket management for multiple vendors and customers. Designed to handle high concurrency while maintaining performance and reliability.
+              </p>
+              <a href="https://github.com/ShivankaVM/OOP-CW-20230684" className="btn btn-link">
+                Project Link
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <div className="project-image">
+              <img src={ticketbooking || "/placeholder.svg"}alt="Ticket Booking System" />
+            </div>
+          </div>
+
+          <div className="project">
+            <div className="project-content">
+              <h3>Clean Waves mobile App</h3>
+              <p>
+              Designed a Figma prototype for a marine conservation platform with intuitive navigation and engaging visuals. Key features include interactive dashboards, e-commerce integration, and real-time pollution tracking, creating an impactful and user-friendly experience for environmental awareness.
+              </p>
+              <a href="https://www.figma.com/design/5NpeWMEJAHPaaMqH4DUulI/Untitled?node-id=0-1&t=Ynwgu2UJF6wOg5G4-1" className="btn btn-link">
+                Prototype
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <div className="project-image-cleanwaves">
+              <img src={cleanwaves || "/placeholder.svg"} alt="Clean Waves App" />
+            </div>
+          </div>
+
+          <div className="more-work">
+            <a href="/work" className="btn btn-link">
+              More work
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <section className="contact-section">
+          <div className="contact-image">
+            <div className="image-container-contact">
+              <img src={contactBlob || "/placeholder.svg"} alt="3D abstract shape" />
+            </div>
+          </div>
+          <div className="contact-content">
+            <h2>Interested in my work?</h2>
+            <p>I'm always open to talk with you about your projects and give solutions.</p>
+            <a href="/contact" className="contact-link">
+              Contact me
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div className="social-links">
+          
+          <a href="https://www.linkedin.com/in/shivanka-maddumarachchi-414b0b262/" aria-label="LinkedIn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <a href="mailto:shivankavindunie@gmail.com" aria-label="Email">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </a>
+          <a href="https://github.com/ShivankaVM" aria-label="GitHub">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+            </svg>
+          </a>
+        </div>
+        <div className="copyright">
+          <p>Copyright © Shivanka Maddumarachchi 2025</p>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+export default Home
