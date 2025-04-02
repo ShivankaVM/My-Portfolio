@@ -58,7 +58,7 @@ const Home = () => {
             </p>
             <p className="cta">Feel free to take a look at my latest projects on Work page</p>
             <div className="buttons">
-              <a href="/cv" className="btn btn-primary">
+              <a href="/Shivanka Maddumarachchi CV.pdf" className="btn btn-primary">
                 Download CV
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
