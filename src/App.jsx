@@ -1,4 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import Home from "./components/Home"
 import Work from "./components/Work"
 import Contact from "./components/Contact"
