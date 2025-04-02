@@ -1,5 +1,5 @@
 import React from 'react';
-import './work.css';
+import './Work.css';
 import lifeOnLand from '../assets/lifeonland.png';
 import studentProgression from '../assets/studentprogression.png';
 import javaPlane from '../assets/javaplane.png';
