@@ -1,12 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "./components/Home"
-import Work from "./components/Work"
-import Contact from "./components/Contact"
+import Home from "./components/Home";
+import Work from "./components/Work";
+import Contact from "./components/Contact";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/My-Portfolio">
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -15,7 +15,7 @@ function App() {
         </Routes>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

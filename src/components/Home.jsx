@@ -59,7 +59,9 @@ const Home = () => {
             </p>
             <p className="cta">Feel free to take a look at my latest projects on Work page</p>
             <div className="buttons">
-              <a href="/Shivanka Maddumarachchi CV.pdf" className="btn btn-primary">
+              <a href="/My-Portfolio/Shivanka Maddumarachchi CV.pdf" 
+                className="btn btn-primary"
+                download="Shivanka_Maddumarachchi_CV.pdf">
                 Download CV
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -76,6 +78,7 @@ const Home = () => {
                   <path d="M7 13l5 5 5-5" />
                 </svg>
               </a>
+
               <a href="/work" className="btn btn-secondary">
                 Work
                 <svg
