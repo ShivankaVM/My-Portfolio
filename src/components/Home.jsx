@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect, useRef } from "react"
 import "./Home.css"
 import profileBlob from "../assets/profile-blob.png"
 import contactBlob from "../assets/contact-blob.png"
@@ -16,52 +19,129 @@ import springboot from "../assets/springboot.png"
 import mysql from "../assets/mysql.png"
 import ticketbooking from "../assets/ticketbookingsystem.png"
 import cleanwaves from "../assets/cleanwaves.png"
-import { Link } from "react-router-dom";
-
+import { Link } from "react-router-dom"
 
 const Home = () => {
+  // Refs for intersection observer animations
+  const heroRef = useRef(null)
+  const skillsRef = useRef(null)
+  const projectRefs = useRef([])
+  const contactRef = useRef(null)
+
+  useEffect(() => {
+    // Animation on load for hero section
+    const heroElement = document.querySelector(".hero")
+    if (heroElement) {
+      heroElement.classList.add("animate-fade-in")
+    }
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: "0px 0px -100px 0px",
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-in-view")
+          observer.unobserve(entry.target)
+        }
+      })
+    }, observerOptions)
+
+    // Observe elements
+    const skillsSection = document.querySelector(".skills")
+    const projectElements = document.querySelectorAll(".project")
+    const contactSection = document.querySelector(".contact-section")
+
+    if (skillsSection) observer.observe(skillsSection)
+    projectElements.forEach((project) => observer.observe(project))
+    if (contactSection) observer.observe(contactSection)
+
+    // Animate skill icons with delay
+    const animateSkillIcons = () => {
+      const icons = document.querySelectorAll(".skill-icon")
+      icons.forEach((icon, index) => {
+        setTimeout(() => {
+          icon.classList.add("animate-pop")
+        }, 100 * index)
+      })
+    }
+
+    // Trigger skill icons animation when skills section is in view
+    const skillsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateSkillIcons()
+            skillsObserver.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.5 },
+    )
+
+    if (skillsSection) skillsObserver.observe(skillsSection)
+
+    return () => {
+      observer.disconnect()
+      skillsObserver.disconnect()
+    }
+  }, [])
+
   return (
     <div className="portfolio">
-      <header>
+      <header className="animate-slide-down">
         <div className="logo">
           <a href="/">Shivanka Maddumarachchi.</a>
         </div>
         <nav>
-  <       ul>
+          <ul>
             <li>
-              <Link to="/" className="active">
+              <Link to="/" className="active nav-link">
                 Home
               </Link>
             </li>
             <li>
-                <Link to="/work">Work</Link>
+              <Link to="/work" className="nav-link">
+                Work
+              </Link>
             </li>
             <li>
-                <Link to="/contact">Contact</Link>
+              <Link to="/contact" className="nav-link">
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>
       </header>
 
       <main>
-        <section className="hero">
+        <section className="hero" ref={heroRef}>
           <div className="hero-content">
-            <h1>
+            <h1 className="animate-title">
               <span className="front">FRONT</span> <span className="and">end</span>
               <br />
               DESIGNER AND
               <br />
               DEVELOPER
             </h1>
-            <p className="intro">Hello, I'm Shivanka.</p>
-            <p className="description">
-            I am an Undergraduate Computer science student at Informatics Institute of Technology (IIT), affiliated with the University of Westminster. I am a passionate UI/UX designer and web developer who loves creating intuitive and visually engaging digital experiences. With a strong focus on design and development, I craft modern web and mobile applications using the latest technologies. Constantly eager to learn and innovate, I thrive on turning ideas into functional and aesthetically pleasing solutions.
+            <p className="intro animate-fade-up delay-1">Hello, I'm Shivanka.</p>
+            <p className="description animate-fade-up delay-2">
+              I am an Undergraduate Computer science student at Informatics Institute of Technology (IIT), affiliated
+              with the University of Westminster. I am a passionate UI/UX designer and web developer who loves creating
+              intuitive and visually engaging digital experiences. With a strong focus on design and development, I
+              craft modern web and mobile applications using the latest technologies. Constantly eager to learn and
+              innovate, I thrive on turning ideas into functional and aesthetically pleasing solutions.
             </p>
-            <p className="cta">Feel free to take a look at my latest projects on Work page</p>
-            <div className="buttons">
-              <a href="/My-Portfolio/Shivanka Maddumarachchi CV.pdf" 
-                className="btn btn-primary"
-                download="Shivanka_Maddumarachchi_CV.pdf">
+            <p className="cta animate-fade-up delay-3">Feel free to take a look at my latest projects on Work page</p>
+            <div className="buttons animate-fade-up delay-4">
+              <a
+                href="/My-Portfolio/Shivanka Maddumarachchi CV.pdf"
+                className="btn btn-primary btn-hover-effect"
+                download="Shivanka_Maddumarachchi_CV.pdf"
+              >
                 Download CV
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,13 +153,14 @@ const Home = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  className="btn-icon"
                 >
                   <path d="M7 7l5 5 5-5" />
                   <path d="M7 13l5 5 5-5" />
                 </svg>
               </a>
 
-              <Link to="/work" className="btn btn-secondary">
+              <Link to="/work" className="btn btn-secondary btn-hover-effect">
                 Work
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -91,6 +172,7 @@ const Home = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  className="btn-icon"
                 >
                   <path d="M5 12h14" />
                   <path d="M12 5l7 7-7 7" />
@@ -98,105 +180,109 @@ const Home = () => {
               </Link>
             </div>
           </div>
-          <div className="hero-image">
+          <div className="hero-image animate-float">
             <div className="image-container">
               <img src={profileBlob || "/placeholder.svg"} alt="3D abstract shape" />
             </div>
           </div>
         </section>
 
-        <section className="skills">
-  <h2>TECHNOLOGIES I USE</h2>
-  <div className="skill-container">
-    <div className="skill-category">
-      <h3>Programming Languages</h3>
-      <div className="skill-icons">
-        <div className="skill-icon">
-          <img src={java || "/placeholder.svg"} alt="Java" />
-          <span>Java</span>
-        </div>
-        <div className="skill-icon">
-          <img src={python || "/placeholder.svg"} alt="Python" />
-          <span>Python</span>
-        </div>
-        <div className="skill-icon">
-          <img src={javascript || "/placeholder.svg"} alt="JavaScript" />
-          <span>JavaScript</span>
-        </div>
-      </div>
-    </div>
+        <section className="skills" ref={skillsRef}>
+          <h2 className="section-title">TECHNOLOGIES I USE</h2>
+          <div className="skill-container">
+            <div className="skill-category">
+              <h3>Programming Languages</h3>
+              <div className="skill-icons">
+                <div className="skill-icon">
+                  <img src={java || "/placeholder.svg"} alt="Java" />
+                  <span>Java</span>
+                </div>
+                <div className="skill-icon">
+                  <img src={python || "/placeholder.svg"} alt="Python" />
+                  <span>Python</span>
+                </div>
+                <div className="skill-icon">
+                  <img src={javascript || "/placeholder.svg"} alt="JavaScript" />
+                  <span>JavaScript</span>
+                </div>
+              </div>
+            </div>
 
-    <div className="skill-category">
-      <h3>Web Development</h3>
-      <div className="skill-icons">
-        <div className="skill-icon">
-          <img src={html || "/placeholder.svg"} alt="HTML" />
-          <span>HTML</span>
-        </div>
-        <div className="skill-icon">
-          <img src={css || "/placeholder.svg"} alt="CSS" />
-          <span>CSS</span>
-        </div>
-        <div className="skill-icon">
-          <img src={react || "/placeholder.svg"} alt="React" />
-          <span>React</span>
-        </div>
-      </div>
-    </div>
+            <div className="skill-category">
+              <h3>Web Development</h3>
+              <div className="skill-icons">
+                <div className="skill-icon">
+                  <img src={html || "/placeholder.svg"} alt="HTML" />
+                  <span>HTML</span>
+                </div>
+                <div className="skill-icon">
+                  <img src={css || "/placeholder.svg"} alt="CSS" />
+                  <span>CSS</span>
+                </div>
+                <div className="skill-icon">
+                  <img src={react || "/placeholder.svg"} alt="React" />
+                  <span>React</span>
+                </div>
+              </div>
+            </div>
 
-    <div className="skill-category">
-      <h3>DevOps and Tools</h3>
-      <div className="skill-icons">
-        <div className="skill-icon">
-          <img src={git || "/placeholder.svg"} alt="Git" />
-          <span>Git</span>
-        </div>
-        <div className="skill-icon">
-          <img src={figma || "/placeholder.svg"} alt="Figma" />
-          <span>Figma</span>
-        </div>
-        <div className="skill-icon">
-          <img src={axure || "/placeholder.svg"} alt="Azure" />
-          <span>Axure</span>
-        </div>
-        <div className="skill-icon">
-          <img src={postman || "/placeholder.svg"} alt="Postman" />
-          <span>Postman</span>
-        </div>
-      </div>
-    </div>
+            <div className="skill-category">
+              <h3>DevOps and Tools</h3>
+              <div className="skill-icons">
+                <div className="skill-icon">
+                  <img src={git || "/placeholder.svg"} alt="Git" />
+                  <span>Git</span>
+                </div>
+                <div className="skill-icon">
+                  <img src={figma || "/placeholder.svg"} alt="Figma" />
+                  <span>Figma</span>
+                </div>
+                <div className="skill-icon">
+                  <img src={axure || "/placeholder.svg"} alt="Azure" />
+                  <span>Axure</span>
+                </div>
+                <div className="skill-icon">
+                  <img src={postman || "/placeholder.svg"} alt="Postman" />
+                  <span>Postman</span>
+                </div>
+              </div>
+            </div>
 
-    <div className="skill-category">
-      <h3>Backend Development</h3>
-      <div className="skill-icons">
-        <div className="skill-icon">
-          <img src={springboot || "/placeholder.svg"} alt="Spring Boot" />
-          <span>Spring Boot</span>
-        </div>
-      </div>
-    </div>
+            <div className="skill-category">
+              <h3>Backend Development</h3>
+              <div className="skill-icons">
+                <div className="skill-icon">
+                  <img src={springboot || "/placeholder.svg"} alt="Spring Boot" />
+                  <span>Spring Boot</span>
+                </div>
+              </div>
+            </div>
 
-    <div className="skill-category">
-      <h3>Database</h3>
-      <div className="skill-icons">
-        <div className="skill-icon">
-          <img src={mysql || "/placeholder.svg"} alt="MySQL" />
-          <span>MySQL</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+            <div className="skill-category">
+              <h3>Database</h3>
+              <div className="skill-icons">
+                <div className="skill-icon">
+                  <img src={mysql || "/placeholder.svg"} alt="MySQL" />
+                  <span>MySQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="recent-work">
-          <h2>RECENT WORK</h2>
+          <h2 className="section-title">RECENT WORK</h2>
 
-          <div className="project">
+          <div className="project" ref={(el) => (projectRefs.current[0] = el)}>
             <div className="project-content">
               <h3>LegalX LK, an AI powered website for Lawyers</h3>
               <p>
-                Worked as a UI/UX designer and frontend developer for LegalX LK, a web-based legal management system. Designed Figma prototypes and developed key frontend components using React, including authentication pages, settings, and an AI chatbot interface. Contributed to AI-powered document summarization, task scheduling, real-time gazette updates, and RBAC for secure user management. Also assisted in building an Acts web scraper for automating legal document retrieval, ensuring usability, accessibility, and efficiency in legal workflows.
+                Worked as a UI/UX designer and frontend developer for LegalX LK, a web-based legal management system.
+                Designed Figma prototypes and developed key frontend components using React, including authentication
+                pages, settings, and an AI chatbot interface. Contributed to AI-powered document summarization, task
+                scheduling, real-time gazette updates, and RBAC for secure user management. Also assisted in building an
+                Acts web scraper for automating legal document retrieval, ensuring usability, accessibility, and
+                efficiency in legal workflows.
               </p>
               <a href="https://legalxlk.com" className="btn btn-link">
                 Go to the Website
@@ -210,6 +296,7 @@ const Home = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  className="arrow-icon"
                 >
                   <path d="M5 12h14" />
                   <path d="M12 5l7 7-7 7" />
@@ -217,15 +304,20 @@ const Home = () => {
               </a>
             </div>
             <div className="project-image">
-              <img src={legalxlk || "/placeholder.svg"} alt="LegalX LK Project" />
+              <img src={legalxlk || "/placeholder.svg"} alt="LegalX LK Project" className="project-img-hover" />
             </div>
           </div>
 
-          <div className="project">
+          <div className="project" ref={(el) => (projectRefs.current[1] = el)}>
             <div className="project-content">
               <h3>Real time Ticket Booking System</h3>
               <p>
-              Developed a real-time concurrent ticketing system using Java (Spring Boot) and Angular, leveraging multi-threading and the Producer-Consumer pattern for synchronized ticket releases and purchases. Implemented WebSockets for real-time updates, ensuring a responsive user experience. The system features thread-safe transactions, JSON-based data storage, and a CLI interface, enabling efficient ticket management for multiple vendors and customers. Designed to handle high concurrency while maintaining performance and reliability.
+                Developed a real-time concurrent ticketing system using Java (Spring Boot) and Angular, leveraging
+                multi-threading and the Producer-Consumer pattern for synchronized ticket releases and purchases.
+                Implemented WebSockets for real-time updates, ensuring a responsive user experience. The system features
+                thread-safe transactions, JSON-based data storage, and a CLI interface, enabling efficient ticket
+                management for multiple vendors and customers. Designed to handle high concurrency while maintaining
+                performance and reliability.
               </p>
               <a href="https://github.com/ShivankaVM/OOP-CW-20230684" className="btn btn-link">
                 Project Link
@@ -239,6 +331,7 @@ const Home = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  className="arrow-icon"
                 >
                   <path d="M5 12h14" />
                   <path d="M12 5l7 7-7 7" />
@@ -246,17 +339,26 @@ const Home = () => {
               </a>
             </div>
             <div className="project-image">
-              <img src={ticketbooking || "/placeholder.svg"}alt="Ticket Booking System" />
+              <img
+                src={ticketbooking || "/placeholder.svg"}
+                alt="Ticket Booking System"
+                className="project-img-hover"
+              />
             </div>
           </div>
 
-          <div className="project">
+          <div className="project" ref={(el) => (projectRefs.current[2] = el)}>
             <div className="project-content">
               <h3>Clean Waves mobile App</h3>
               <p>
-              Designed a Figma prototype for a marine conservation platform with intuitive navigation and engaging visuals. Key features include interactive dashboards, e-commerce integration, and real-time pollution tracking, creating an impactful and user-friendly experience for environmental awareness.
+                Designed a Figma prototype for a marine conservation platform with intuitive navigation and engaging
+                visuals. Key features include interactive dashboards, e-commerce integration, and real-time pollution
+                tracking, creating an impactful and user-friendly experience for environmental awareness.
               </p>
-              <a href="https://www.figma.com/design/5NpeWMEJAHPaaMqH4DUulI/Untitled?node-id=0-1&t=Ynwgu2UJF6wOg5G4-1" className="btn btn-link">
+              <a
+                href="https://www.figma.com/design/5NpeWMEJAHPaaMqH4DUulI/Untitled?node-id=0-1&t=Ynwgu2UJF6wOg5G4-1"
+                className="btn btn-link"
+              >
                 Prototype
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -268,6 +370,7 @@ const Home = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  className="arrow-icon"
                 >
                   <path d="M5 12h14" />
                   <path d="M12 5l7 7-7 7" />
@@ -275,11 +378,11 @@ const Home = () => {
               </a>
             </div>
             <div className="project-image-cleanwaves">
-              <img src={cleanwaves || "/placeholder.svg"} alt="Clean Waves App" />
+              <img src={cleanwaves || "/placeholder.svg"} alt="Clean Waves App" className="project-img-hover" />
             </div>
           </div>
 
-          <div className="more-work">
+          <div className="more-work animate-pulse">
             <Link to="/work" className="btn btn-link">
               More work
               <svg
@@ -292,6 +395,7 @@ const Home = () => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                className="arrow-icon"
               >
                 <path d="M5 12h14" />
                 <path d="M12 5l7 7-7 7" />
@@ -300,16 +404,18 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="contact-section">
-          <div className="contact-image">
+        <section className="contact-section" ref={contactRef}>
+          <div className="contact-image animate-float">
             <div className="image-container-contact">
               <img src={contactBlob || "/placeholder.svg"} alt="3D abstract shape" />
             </div>
           </div>
           <div className="contact-content">
-            <h2>Interested in my work?</h2>
-            <p>I'm always open to talk with you about your projects and give solutions.</p>
-            <Link to="/contact" className="contact-link">
+            <h2 className="animate-on-scroll">Interested in my work?</h2>
+            <p className="animate-on-scroll">
+              I'm always open to talk with you about your projects and give solutions.
+            </p>
+            <Link to="/contact" className="contact-link animate-on-scroll">
               Contact me
             </Link>
           </div>
@@ -318,8 +424,11 @@ const Home = () => {
 
       <footer>
         <div className="social-links">
-          
-          <a href="https://www.linkedin.com/in/shivanka-maddumarachchi-414b0b262/" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/shivanka-maddumarachchi-414b0b262/"
+            aria-label="LinkedIn"
+            className="social-icon-hover"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -336,7 +445,7 @@ const Home = () => {
               <circle cx="4" cy="4" r="2" />
             </svg>
           </a>
-          <a href="mailto:shivankavindunie@gmail.com" aria-label="Email">
+          <a href="mailto:shivankavindunie@gmail.com" aria-label="Email" className="social-icon-hover">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -352,7 +461,7 @@ const Home = () => {
               <polyline points="22,6 12,13 2,6" />
             </svg>
           </a>
-          <a href="https://github.com/ShivankaVM" aria-label="GitHub">
+          <a href="https://github.com/ShivankaVM" aria-label="GitHub" className="social-icon-hover">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -377,3 +486,4 @@ const Home = () => {
 }
 
 export default Home
+
