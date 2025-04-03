@@ -1,7 +1,5 @@
-"use client"
-
-import { useState } from "react"
-import "./Contact.css"
+import { useState, useEffect } from "react";
+import "./Contact.css";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
@@ -9,28 +7,58 @@ const Contact = () => {
     name: "",
     email: "",
     projectDetails: "",
-  })
+  });
+
+  useEffect(() => {
+    // Animation on load for header
+    const headerElement = document.querySelector('header');
+    if (headerElement) {
+      headerElement.classList.add('animate-slide-down');
+    }
+
+    // Animate form container
+    const formContainer = document.querySelector('.contact-form-container');
+    if (formContainer) {
+      setTimeout(() => {
+        formContainer.classList.add('animate-fade-up');
+      }, 300);
+    }
+
+    // Animate intro text
+    const introElement = document.querySelector('.contact-intro');
+    if (introElement) {
+      introElement.classList.add('animate-fade-in');
+    }
+
+    // Animate footer
+    const footerElement = document.querySelector('footer');
+    if (footerElement) {
+      setTimeout(() => {
+        footerElement.classList.add('animate-fade-in');
+      }, 600);
+    }
+  }, []);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setState((prevState) => ({
       ...prevState,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // Here you would typically handle form submission
-    console.log("Form submitted:", formData)
+    console.log("Form submitted:", formData);
     // Reset form after submission
     setState({
       name: "",
       email: "",
       projectDetails: "",
-    })
+    });
     // You could also add a success message or redirect
-  }
+  };
 
   return (
     <div className="contact-container">
@@ -39,18 +67,18 @@ const Contact = () => {
           <a href="/">Shivanka Maddumarachchi.</a>
         </div>
         <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/work">Work</Link>
-          </li>
-          <li>
-            <Link to="/contact" className="active">Contact</Link>
-          </li>
-        </ul>
-      </nav>
+          <ul>
+            <li>
+              <Link to="/" className="nav-link">Home</Link>
+            </li>
+            <li>
+              <Link to="/work" className="nav-link">Work</Link>
+            </li>
+            <li>
+              <Link to="/contact" className="active nav-link">Contact</Link>
+            </li>
+          </ul>
+        </nav>
       </header>
 
       <main className="contact-content">
@@ -71,6 +99,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                className="form-input"
               />
               <input
                 type="email"
@@ -79,6 +108,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                className="form-input"
               />
             </div>
             <textarea
@@ -87,6 +117,7 @@ const Contact = () => {
               value={formData.projectDetails}
               onChange={handleChange}
               required
+              className="form-textarea"
             ></textarea>
             <button type="submit" className="submit-btn">
               Submit
@@ -97,8 +128,7 @@ const Contact = () => {
 
       <footer>
         <div className="social-links">
-          
-          <a href="https://www.linkedin.com/in/shivanka-maddumarachchi-414b0b262/" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/shivanka-maddumarachchi-414b0b262/" aria-label="LinkedIn" className="social-icon-hover">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -115,7 +145,7 @@ const Contact = () => {
               <circle cx="4" cy="4" r="2" />
             </svg>
           </a>
-          <a href="mailto:shivankavindunie@gmail.com" aria-label="Email">
+          <a href="mailto:shivankavindunie@gmail.com" aria-label="Email" className="social-icon-hover">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -131,7 +161,7 @@ const Contact = () => {
               <polyline points="22,6 12,13 2,6" />
             </svg>
           </a>
-          <a href="https://github.com/ShivankaVM" aria-label="GitHub">
+          <a href="https://github.com/ShivankaVM" aria-label="GitHub" className="social-icon-hover">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -152,8 +182,7 @@ const Contact = () => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
-
+export default Contact;

@@ -18,7 +18,7 @@ import postman from "../assets/postman.png"
 import springboot from "../assets/springboot.png"
 import mysql from "../assets/mysql.png"
 import ticketbooking from "../assets/ticketbookingsystem.png"
-import cleanwaves from "../assets/cleanwaves.png"
+import cleanwaves from "../assets/cleanwaves.png" // Import the cleanwaves image
 import { Link } from "react-router-dom"
 
 const Home = () => {
@@ -27,6 +27,10 @@ const Home = () => {
   const skillsRef = useRef(null)
   const projectRefs = useRef([])
   const contactRef = useRef(null)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+   },[])
 
   useEffect(() => {
     // Animation on load for hero section
@@ -83,6 +87,14 @@ const Home = () => {
     )
 
     if (skillsSection) skillsObserver.observe(skillsSection)
+
+    // Animate footer
+    const footerElement = document.querySelector("footer")
+    if (footerElement) {
+      setTimeout(() => {
+        footerElement.classList.add("animate-fade-in")
+      }, 800)
+    }
 
     return () => {
       observer.disconnect()
