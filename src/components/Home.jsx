@@ -16,6 +16,7 @@ import springboot from "../assets/springboot.png"
 import mysql from "../assets/mysql.png"
 import ticketbooking from "../assets/ticketbookingsystem.png"
 import cleanwaves from "../assets/cleanwaves.png"
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -26,17 +27,17 @@ const Home = () => {
           <a href="/">Shivanka Maddumarachchi.</a>
         </div>
         <nav>
-          <ul>
+  <       ul>
             <li>
-              <a href="/" className="active">
+              <Link to="/" className="active">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/work">Work</a>
+                <Link to="/work">Work</Link>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+                <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </nav>

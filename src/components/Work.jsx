@@ -6,6 +6,7 @@ import javaPlane from '../assets/javaplane.png';
 import ticketBooking from '../assets/ticketbookingsystem.png';
 import cleanWaves from '../assets/cleanwaves.png';
 import legalxlk from '../assets/legalxlk.png';
+import { Link } from "react-router-dom";
 
 const Work = () => {
   return (
@@ -15,18 +16,18 @@ const Work = () => {
           <a href="/">Shivanka Maddumarachchi.</a>
         </div>
         <nav>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/work" className="active">Work</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/work" className="active">Work</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
       </header>
 
       <main className="work-content">

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import "./Contact.css"
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const [formData, setState] = useState({
@@ -38,20 +39,18 @@ const Contact = () => {
           <a href="/">Shivanka Maddumarachchi.</a>
         </div>
         <nav>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/work">Work</a>
-            </li>
-            <li>
-              <a href="/contact" className="active">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/work">Work</Link>
+          </li>
+          <li>
+            <Link to="/contact" className="active">Contact</Link>
+          </li>
+        </ul>
+      </nav>
       </header>
 
       <main className="contact-content">
