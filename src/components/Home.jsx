@@ -79,7 +79,7 @@ const Home = () => {
                 </svg>
               </a>
 
-              <a href="/work" className="btn btn-secondary">
+              <Link to="/work" className="btn btn-secondary">
                 Work
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ const Home = () => {
                   <path d="M5 12h14" />
                   <path d="M12 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="hero-image">
@@ -280,7 +280,7 @@ const Home = () => {
           </div>
 
           <div className="more-work">
-            <a href="/work" className="btn btn-link">
+            <Link to="/work" className="btn btn-link">
               More work
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -296,7 +296,7 @@ const Home = () => {
                 <path d="M5 12h14" />
                 <path d="M12 5l7 7-7 7" />
               </svg>
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -309,9 +309,9 @@ const Home = () => {
           <div className="contact-content">
             <h2>Interested in my work?</h2>
             <p>I'm always open to talk with you about your projects and give solutions.</p>
-            <a href="/contact" className="contact-link">
+            <Link to="/contact" className="contact-link">
               Contact me
-            </a>
+            </Link>
           </div>
         </section>
       </main>
