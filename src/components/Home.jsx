@@ -106,7 +106,7 @@ const Home = () => {
     <div className="portfolio">
       <header className="animate-slide-down">
         <div className="logo">
-          <a href="/">Shivanka Maddumarachchi.</a>
+          <Link to="/">Shivanka Maddumarachchi.</Link>
         </div>
         <nav>
           <ul>

@@ -59,7 +59,7 @@ const Work = () => {
     <div className="work-container">
       <header>
         <div className="logo">
-          <a href="/">Shivanka Maddumarachchi.</a>
+          <Link to="/">Shivanka Maddumarachchi.</Link>
         </div>
         <nav>
         <ul>
