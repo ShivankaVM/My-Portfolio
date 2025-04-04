@@ -37,7 +37,7 @@ function App() {
   }, [])
 
   return (
-    <Router basename="/My-Portfolio">
+    <Router>
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
