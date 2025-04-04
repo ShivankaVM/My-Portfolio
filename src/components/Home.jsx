@@ -150,7 +150,7 @@ const Home = () => {
             <p className="cta animate-fade-up delay-3">Feel free to take a look at my latest projects on Work page</p>
             <div className="buttons animate-fade-up delay-4">
               <a
-                href="/My-Portfolio/Shivanka Maddumarachchi CV.pdf"
+                href="/Shivanka Maddumarachchi CV.pdf"
                 className="btn btn-primary btn-hover-effect"
                 download="Shivanka_Maddumarachchi_CV.pdf"
               >
