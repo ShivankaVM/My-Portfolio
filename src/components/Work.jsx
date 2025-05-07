@@ -6,6 +6,8 @@ import javaPlane from '../assets/javaplane.png';
 import ticketBooking from '../assets/ticketbookingsystem.png';
 import cleanWaves from '../assets/cleanwaves.png';
 import legalxlk from '../assets/legalxlk.png';
+import cinnamonLegends from '../assets/cinnamonLegends.png';
+import EventBooking from '../assets/EventBooking.png';
 import { Link } from "react-router-dom";
 
 const Work = () => {
@@ -194,6 +196,46 @@ const Work = () => {
           </div>
           <div className="project-image">
             <img src={legalxlk || "/placeholder.svg"} alt="LegalX LK website" className="project-img-hover" />
+          </div>
+        </div>
+
+        <div className="project-item" ref={(el) => projectRefs.current[5] = el}>
+          <div className="project-info">
+            <h2 className="project-title">Cinnamon Legends Website</h2>
+            <p className="technologies">Technologies: Figma</p>
+            <p className="description">
+            Crafted a Figma prototype for Cinnamon Legends, a business platform showcasing premium cinnamon products. The design emphasizes smooth navigation, visually rich layouts, and a seamless user journey. Key features include a dynamic product catalog, integrated e-commerce functionality, and a storytelling-driven interface to enhance brand identity and customer engagement.
+            </p>
+            <a href="https://www.figma.com/proto/q3ZOYRYsUslSy7xskZXVZP/Cinnamon-Legends?page-id=0%3A1&node-id=10-3&p=f&viewport=303%2C321%2C0.36&t=lWAiOpyQNtuOgXdz-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A3" className="project-link">
+              Prototype
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div className="project-image">
+            <img src={cinnamonLegends || "/placeholder.svg"} alt="Cinnamon Legends website" className="project-img-hover" />
+          </div>
+        </div>
+
+        <div className="project-item" ref={(el) => projectRefs.current[4] = el}>
+          <div className="project-info">
+            <h2 className="project-title"> Event booking and Management App</h2>
+            <p className="technologies">Technologies: Figma</p>
+            <p className="description">
+            Designed a Figma prototype for an event booking and management app that offers a seamless and intuitive user experience. The Overview Page provides a clear summary of upcoming events, total bookings, and performance analytics through interactive visuals. Users can explore events on the Browse Events Page using filters for type, date, location, and popularity. Each event has a dedicated Event Details Page highlighting key information like date, location, attendee count, and ticket sales. The Attendee Insights Page showcases demographic data and engagement trends using charts and graphs, enabling organizers to make informed decisions and optimize future events.
+            </p>
+            <a href="https://www.figma.com/proto/VLRRxPilgRpWeAe8F4kS9K/High-Fidelity?page-id=0%3A1&node-id=3-187&p=f&viewport=-176%2C356%2C0.32&t=40dBgnTV0u9eQtyC-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3%3A187" className="project-link">
+              Prototype
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div className="project-image mobile-app">
+            <img src={EventBooking || "/placeholder.svg"} alt="Event booking and Management App" className="project-img-hover" />
           </div>
         </div>
       </main>

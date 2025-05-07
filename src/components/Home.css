@@ -280,14 +280,6 @@ nav ul li a.active {
   object-fit: cover;
 }
 
-.project-image-cleanwaves img {
-  width: 250px;
-  height: auto;
-  margin-left: 180px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
 .more-work {
   display: flex;
   justify-content: center;

@@ -18,7 +18,7 @@ import postman from "../assets/postman.png"
 import springboot from "../assets/springboot.png"
 import mysql from "../assets/mysql.png"
 import ticketbooking from "../assets/ticketbookingsystem.png"
-import cleanwaves from "../assets/cleanwaves.png" // Import the cleanwaves image
+import cinnamonLegends from "../assets/cinnamonLegends.png" 
 import { Link } from "react-router-dom"
 
 const Home = () => {
@@ -361,14 +361,12 @@ const Home = () => {
 
           <div className="project" ref={(el) => (projectRefs.current[2] = el)}>
             <div className="project-content">
-              <h3>Clean Waves mobile App</h3>
+              <h3>Cinnamon Legends Website</h3>
               <p>
-                Designed a Figma prototype for a marine conservation platform with intuitive navigation and engaging
-                visuals. Key features include interactive dashboards, e-commerce integration, and real-time pollution
-                tracking, creating an impactful and user-friendly experience for environmental awareness.
+              Crafted a Figma prototype for Cinnamon Legends, a business platform showcasing premium cinnamon products. The design emphasizes smooth navigation, visually rich layouts, and a seamless user journey. Key features include a dynamic product catalog, integrated e-commerce functionality, and a storytelling-driven interface to enhance brand identity and customer engagement.
               </p>
               <a
-                href="https://www.figma.com/design/5NpeWMEJAHPaaMqH4DUulI/Untitled?node-id=0-1&t=Ynwgu2UJF6wOg5G4-1"
+                href="https://www.figma.com/proto/q3ZOYRYsUslSy7xskZXVZP/Cinnamon-Legends?page-id=0%3A1&node-id=10-3&p=f&viewport=303%2C321%2C0.36&t=lWAiOpyQNtuOgXdz-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A3"
                 className="btn btn-link"
               >
                 Prototype
@@ -389,9 +387,12 @@ const Home = () => {
                 </svg>
               </a>
             </div>
-            <div className="project-image-cleanwaves">
-              <img src={cleanwaves || "/placeholder.svg"} alt="Clean Waves App" className="project-img-hover" />
-            </div>
+            <div className="project-image">
+            <img
+                src={cinnamonLegends || "/placeholder.svg"}
+                alt="Cinnamon Legends"
+                className="project-img-hover"
+              /></div>
           </div>
 
           <div className="more-work animate-pulse">
