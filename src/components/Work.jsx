@@ -8,6 +8,7 @@ import cleanWaves from '../assets/cleanwaves.png';
 import legalxlk from '../assets/legalxlk.png';
 import cinnamonLegends from '../assets/cinnamonLegends.png';
 import EventBooking from '../assets/EventBooking.png';
+import vivee from "../assets/vivee.png"
 import { Link } from "react-router-dom";
 
 const Work = () => {
@@ -216,6 +217,26 @@ const Work = () => {
           </div>
           <div className="project-image">
             <img src={cinnamonLegends || "/placeholder.svg"} alt="Cinnamon Legends website" className="project-img-hover" />
+          </div>
+        </div>
+
+        <div className="project-item" ref={(el) => projectRefs.current[5] = el}>
+          <div className="project-info">
+            <h2 className="project-title">Modern eCommerce Website for a Female Fashion Brand</h2>
+            <p className="technologies">Technologies: Figma</p>
+            <p className="description">
+            Designed a modern eCommerce website for a women’s fashion brand using Figma, focusing on clean aesthetics and user-centric navigation. Applied a mobile-first responsive layout with structured grids, enhancing product discovery and browsing. Incorporated soft neutral color schemes and elegant typography to reflect the brand’s feminine and minimal identity. UX features include intuitive filters, quick-add interactions, and a seamless checkout flow. The design ensures clarity, elegance, and ease of use across all devices, offering a refined shopping experience from homepage to checkout.
+            </p>
+            <a href="https://www.figma.com/proto/euiPJOjhXdQomwEijFjkdl/Vive%C3%A9?page-id=0%3A1&node-id=2003-2&viewport=280%2C229%2C0.08&t=oMFafte4EnE6IvP7-1&scaling=min-zoom&content-scaling=fixed" className="project-link">
+              Prototype
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div className="project-image">
+            <img src={vivee || "/placeholder.svg"} alt="E commerce website" className="project-img-hover" />
           </div>
         </div>
 

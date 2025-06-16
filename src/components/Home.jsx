@@ -19,6 +19,7 @@ import springboot from "../assets/springboot.png"
 import mysql from "../assets/mysql.png"
 import ticketbooking from "../assets/ticketbookingsystem.png"
 import cinnamonLegends from "../assets/cinnamonLegends.png" 
+import vivee from "../assets/vivee.png" 
 import { Link } from "react-router-dom"
 
 const Home = () => {
@@ -322,17 +323,12 @@ const Home = () => {
 
           <div className="project" ref={(el) => (projectRefs.current[1] = el)}>
             <div className="project-content">
-              <h3>Real time Ticket Booking System</h3>
+              <h3>Modern eCommerce Website for a Female Fashion Brand  </h3>
               <p>
-                Developed a real-time concurrent ticketing system using Java (Spring Boot) and Angular, leveraging
-                multi-threading and the Producer-Consumer pattern for synchronized ticket releases and purchases.
-                Implemented WebSockets for real-time updates, ensuring a responsive user experience. The system features
-                thread-safe transactions, JSON-based data storage, and a CLI interface, enabling efficient ticket
-                management for multiple vendors and customers. Designed to handle high concurrency while maintaining
-                performance and reliability.
+                Designed a modern eCommerce website for a women’s fashion brand using Figma, focusing on clean aesthetics and user-centric navigation. Applied a mobile-first responsive layout with structured grids, enhancing product discovery and browsing. Incorporated soft neutral color schemes and elegant typography to reflect the brand’s feminine and minimal identity. UX features include intuitive filters, quick-add interactions, and a seamless checkout flow. The design ensures clarity, elegance, and ease of use across all devices, offering a refined shopping experience from homepage to checkout.
               </p>
-              <a href="https://github.com/ShivankaVM/OOP-CW-20230684" className="btn btn-link">
-                Project Link
+              <a href="https://www.figma.com/proto/euiPJOjhXdQomwEijFjkdl/Vive%C3%A9?page-id=0%3A1&node-id=2003-2&viewport=280%2C229%2C0.08&t=oMFafte4EnE6IvP7-1&scaling=min-zoom&content-scaling=fixed" className="btn btn-link">
+                Prototype
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -352,8 +348,8 @@ const Home = () => {
             </div>
             <div className="project-image">
               <img
-                src={ticketbooking || "/placeholder.svg"}
-                alt="Ticket Booking System"
+                src={vivee || "/placeholder.svg"}
+                alt="E commerce website"
                 className="project-img-hover"
               />
             </div>
