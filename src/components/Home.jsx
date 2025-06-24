@@ -17,7 +17,7 @@ import axure from "../assets/axure.png"
 import postman from "../assets/postman.png"
 import springboot from "../assets/springboot.png"
 import mysql from "../assets/mysql.png"
-import cinnamonLegends from "../assets/cinnamonLegends.png" 
+import eventura from "../assets/eventura.png" 
 import vivee from "../assets/vivee.png" 
 import { Link } from "react-router-dom"
 
@@ -320,6 +320,42 @@ const Home = () => {
             </div>
           </div>
 
+          <div className="project" ref={(el) => (projectRefs.current[2] = el)}>
+            <div className="project-content">
+              <h3>Eventura Weddings</h3>
+              <p>
+              Crafted a Figma prototype for Eventura, a wedding showcase platform designed to highlight beautifully curated celebrations. The design focuses on a smooth, visually elegant user experience with pages dedicated to past weddings, company background, and seamless contact options. Key features include a gallery-style weddings page, an inviting About Us section, and a user-friendly contact form—offering a refined digital presence that reflects the brand’s dedication to memorable moments.
+              </p>
+              <a
+                href="https://www.figma.com/proto/W311v45B61NNWe4WKL2z37/Eventura?page-id=0%3A1&node-id=34-18&viewport=25%2C206%2C0.16&t=weTqeWZFXrdX5Qlx-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=34%3A18"
+                className="btn btn-link"
+              >
+                Prototype
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="arrow-icon"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <div className="project-image">
+            <img
+                src={eventura || "/placeholder.svg"}
+                alt="Eventura"
+                className="project-img-hover"
+              /></div>
+          </div>
+
           <div className="project" ref={(el) => (projectRefs.current[1] = el)}>
             <div className="project-content">
               <h3>Modern eCommerce Website for a Female Fashion Brand  </h3>
@@ -352,42 +388,6 @@ const Home = () => {
                 className="project-img-hover"
               />
             </div>
-          </div>
-
-          <div className="project" ref={(el) => (projectRefs.current[2] = el)}>
-            <div className="project-content">
-              <h3>Cinnamon Legends Website</h3>
-              <p>
-              Crafted a Figma prototype for Cinnamon Legends, a business platform showcasing premium cinnamon products. The design emphasizes smooth navigation, visually rich layouts, and a seamless user journey. Key features include a dynamic product catalog, integrated e-commerce functionality, and a storytelling-driven interface to enhance brand identity and customer engagement.
-              </p>
-              <a
-                href="https://www.figma.com/proto/q3ZOYRYsUslSy7xskZXVZP/Cinnamon-Legends?page-id=0%3A1&node-id=10-3&p=f&viewport=303%2C321%2C0.36&t=lWAiOpyQNtuOgXdz-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A3"
-                className="btn btn-link"
-              >
-                Prototype
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="arrow-icon"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-            <div className="project-image">
-            <img
-                src={cinnamonLegends || "/placeholder.svg"}
-                alt="Cinnamon Legends"
-                className="project-img-hover"
-              /></div>
           </div>
 
           <div className="more-work animate-pulse">

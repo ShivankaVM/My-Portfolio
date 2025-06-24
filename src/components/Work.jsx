@@ -9,6 +9,7 @@ import legalxlk from '../assets/legalxlk.png';
 import cinnamonLegends from '../assets/cinnamonLegends.png';
 import EventBooking from '../assets/EventBooking.png';
 import vivee from "../assets/vivee.png"
+import eventura from "../assets/eventura.png"
 import { Link } from "react-router-dom";
 
 const Work = () => {
@@ -259,6 +260,26 @@ const Work = () => {
             <img src={EventBooking || "/placeholder.svg"} alt="Event booking and Management App" className="project-img-hover" />
           </div>
         </div>
+
+        <div className="project-item" ref={(el) => projectRefs.current[4] = el}>
+          <div className="project-info">
+            <h2 className="project-title"> Eventura Weddings</h2>
+            <p className="technologies">Technologies: Figma</p>
+            <p className="description">
+           Crafted a Figma prototype for Eventura, a wedding showcase platform designed to highlight beautifully curated celebrations. The design focuses on a smooth, visually elegant user experience with pages dedicated to past weddings, company background, and seamless contact options. Key features include a gallery-style weddings page, an inviting About Us section, and a user-friendly contact form—offering a refined digital presence that reflects the brand’s dedication to memorable moments.
+            </p>
+            <a href="https://www.figma.com/proto/W311v45B61NNWe4WKL2z37/Eventura?page-id=0%3A1&node-id=34-18&viewport=25%2C206%2C0.16&t=weTqeWZFXrdX5Qlx-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=34%3A18" className="project-link">
+              Prototype
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div className="project-image">
+            <img src={eventura || "/placeholder.svg"} alt="Eventura" className="project-img-hover" />
+          </div>
+        </div> 
       </main>
 
       <footer className="work--footer">
