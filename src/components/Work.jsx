@@ -10,6 +10,8 @@ import cinnamonLegends from '../assets/cinnamonLegends.png';
 import EventBooking from '../assets/EventBooking.png';
 import vivee from "../assets/vivee.png"
 import eventura from "../assets/eventura.png"
+import napco from "../assets/napco.png"
+import dashboard from "../assets/dashboard.png"
 import { Link } from "react-router-dom";
 
 const Work = () => {
@@ -248,7 +250,7 @@ const Work = () => {
             <p className="description">
             Designed a Figma prototype for an event booking and management app that offers a seamless and intuitive user experience. The Overview Page provides a clear summary of upcoming events, total bookings, and performance analytics through interactive visuals. Users can explore events on the Browse Events Page using filters for type, date, location, and popularity. Each event has a dedicated Event Details Page highlighting key information like date, location, attendee count, and ticket sales. The Attendee Insights Page showcases demographic data and engagement trends using charts and graphs, enabling organizers to make informed decisions and optimize future events.
             </p>
-            <a href="https://www.figma.com/proto/VLRRxPilgRpWeAe8F4kS9K/High-Fidelity?page-id=0%3A1&node-id=3-187&p=f&viewport=-176%2C356%2C0.32&t=40dBgnTV0u9eQtyC-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3%3A187" className="project-link">
+            <a href="https://www.figma.com/proto/VLRRxPilgRpWeAe8F4kS9K/Zyner-Assessment?page-id=0%3A1&node-id=60-78&p=f&viewport=68%2C896%2C0.34&t=yoHjWmobfBQZZYTz-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=60%3A78" className="project-link">
               Prototype
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
                 <path d="M5 12h14" />
@@ -256,7 +258,7 @@ const Work = () => {
               </svg>
             </a>
           </div>
-          <div className="project-image mobile-app">
+          <div className="project-image"> 
             <img src={EventBooking || "/placeholder.svg"} alt="Event booking and Management App" className="project-img-hover" />
           </div>
         </div>
@@ -278,6 +280,46 @@ const Work = () => {
           </div>
           <div className="project-image">
             <img src={eventura || "/placeholder.svg"} alt="Eventura" className="project-img-hover" />
+          </div>
+        </div> 
+
+        <div className="project-item" ref={(el) => projectRefs.current[4] = el}>
+          <div className="project-info">
+            <h2 className="project-title"> Lab-Oriented Dashboard Design</h2>
+            <p className="technologies">Technologies: Figma</p>
+            <p className="description">
+           Crafted a Figma prototype for the XRF Spectrometer Application, a lab-oriented dashboard designed for technical precision and usability. The interface includes a streamlined login experience, a modular main dashboard with real-time device status and quick actions, and an intuitive Sample Analysis screen with input forms, charts, and progress indicators. The design emphasizes visual clarity, efficient navigation, and a professional aesthetic—ensuring that lab technicians can interact with the system confidently and efficiently in high-focus environments.
+           </p>
+            <a href="https://www.figma.com/proto/u8gOp12GEtsvNaOOFUdOu5/Napco?page-id=0%3A1&node-id=3-68&viewport=38%2C312%2C0.25&t=V1S0yBSyhd4QOAWm-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3%3A2" className="project-link">
+              Prototype
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" /> 
+              </svg>
+            </a>
+          </div>
+          <div className="project-image">
+            <img src={napco || "/placeholder.svg"} alt="Napco" className="project-img-hover" />
+          </div>
+        </div> 
+
+        <div className="project-item" ref={(el) => projectRefs.current[4] = el}>
+          <div className="project-info">
+            <h2 className="project-title"> Modern SaaS Admin Dashboard</h2>
+            <p className="technologies">Technologies: Figma</p>
+            <p className="description">
+           Crafted a Figma prototype for a modern SaaS admin dashboard focused on clarity, usability, and efficient user workflows. The design features a clean login experience, a modular dashboard home with key metrics and charts, a user management interface with actionable tables, and intuitive settings and analytics pages. Prioritizing visual hierarchy and minimal UI components, the layout ensures a seamless experience for administrators managing users, settings, and data insights within a streamlined, professional environment.
+           </p>
+            <a href="https://www.figma.com/proto/xRf05hOFv0Eg8pMXZkeqJS/NoLoopTech?page-id=0%3A1&node-id=1-4&p=f&viewport=-933%2C90%2C0.37&t=spaSl3TLBIdOfjCA-1&scaling=scale-down&content-scaling=fixed" className="project-link">
+              Prototype
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" /> 
+              </svg>
+            </a>
+          </div>
+          <div className="project-image">
+            <img src={dashboard || "/placeholder.svg"} alt="dashboard" className="project-img-hover" />
           </div>
         </div> 
       </main>
