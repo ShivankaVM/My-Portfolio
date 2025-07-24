@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Contact.css";
 import { Link } from "react-router-dom";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setState] = useState({
@@ -9,7 +10,13 @@ const Contact = () => {
     projectDetails: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+
   useEffect(() => {
+    // Initialize EmailJS with your public key
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+
     // Animation on load for header
     const headerElement = document.querySelector('header');
     if (headerElement) {
@@ -47,17 +54,53 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically handle form submission
-    console.log("Form submitted:", formData);
-    // Reset form after submission
-    setState({
-      name: "",
-      email: "",
-      projectDetails: "",
-    });
-    // You could also add a success message or redirect
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // EmailJS template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        to_email: 'shivankavindunie@gmail.com',
+        message: formData.projectDetails,
+        reply_to: formData.email,
+      };
+
+      const result = await emailjs.send(
+        'YOUR_SERVICE_ID',    // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID',   // Replace with your EmailJS template ID
+        templateParams
+      );
+
+      console.log('Email sent successfully:', result);
+      setSubmitStatus('success');
+      
+      // Reset form after successful submission
+      setState({
+        name: "",
+        email: "",
+        projectDetails: "",
+      });
+
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+      
+      // Clear error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -90,6 +133,18 @@ const Contact = () => {
         </div>
 
         <div className="contact-form-container">
+          {submitStatus === 'success' && (
+            <div className="status-message success-message">
+              ✅ Message sent successfully! I'll get back to you soon.
+            </div>
+          )}
+          
+          {submitStatus === 'error' && (
+            <div className="status-message error-message">
+              ❌ Failed to send message. Please try again or email me directly.
+            </div>
+          )}
+
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-row">
               <input
@@ -100,6 +155,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="form-input"
+                disabled={isSubmitting}
               />
               <input
                 type="email"
@@ -109,6 +165,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="form-input"
+                disabled={isSubmitting}
               />
             </div>
             <textarea
@@ -118,9 +175,14 @@ const Contact = () => {
               onChange={handleChange}
               required
               className="form-textarea"
+              disabled={isSubmitting}
             ></textarea>
-            <button type="submit" className="submit-btn">
-              Submit
+            <button 
+              type="submit" 
+              className={`submit-btn ${isSubmitting ? 'submitting' : ''}`}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Sending...' : 'Submit'}
             </button>
           </form>
         </div>
