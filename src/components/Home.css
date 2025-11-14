@@ -146,7 +146,7 @@ nav ul li a.active {
 
 .image-container {
   width: 310px;
-  height: 530px;
+  height: 470px;
   border-radius: 50%;
   background: linear-gradient(to bottom right, #dd73bd , transparent);
   display: flex;
