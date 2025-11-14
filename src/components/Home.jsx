@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import "./Home.css"
-import profileBlob from "../assets/profile-blob.png"
+import profile from "../assets/profile.jpg"
 import contactBlob from "../assets/contact-blob.png"
 import legalxlk from "../assets/legalxlk.png"
 import java from "../assets/java.png"
@@ -194,7 +194,7 @@ const Home = () => {
           </div>
           <div className="hero-image animate-float">
             <div className="image-container">
-              <img src={profileBlob || "/placeholder.svg"} alt="3D abstract shape" />
+              <img src={profile || "/placeholder.svg"} alt="3D abstract shape" />
             </div>
           </div>
         </section>
