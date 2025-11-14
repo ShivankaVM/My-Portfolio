@@ -194,7 +194,7 @@ const Home = () => {
           </div>
           <div className="hero-image animate-float">
             <div className="image-container">
-              <img src={profile || "/placeholder.svg"} alt="3D abstract shape" />
+              <img src={profile || "/placeholder.svg"} alt="profile picture" />
             </div>
           </div>
         </section>
