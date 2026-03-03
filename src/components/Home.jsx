@@ -253,11 +253,7 @@ const Home = () => {
                 </div>
                 <div className="skill-icon">
                   <img src={lightroom || "/placeholder.svg"} alt="Lightroom" />
-                  <span>Ligtroom</span>
-                </div>
-                <div className="skill-icon">
-                  <img src={indesign || "/placeholder.svg"} alt="Indesign" />
-                  <span>Adobe Indesign</span>
+                  <span>Lightroom</span>
                 </div>
                 <div className="skill-icon">
                   <img src={axure || "/placeholder.svg"} alt="Azure" />
@@ -266,6 +262,10 @@ const Home = () => {
                 <div className="skill-icon">
                   <img src={postman || "/placeholder.svg"} alt="Postman" />
                   <span>Postman</span>
+                </div>
+                <div className="skill-icon">
+                  <img src={indesign || "/placeholder.svg"} alt="Indesign" />
+                  <span>Adobe Indesign</span>
                 </div>
               </div>
             </div>
