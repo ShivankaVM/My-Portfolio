@@ -13,6 +13,8 @@ import css from "../assets/css.png"
 import react from "../assets/react.png"
 import git from "../assets/git.png"
 import figma from "../assets/figma.png"
+import indesign from "../assets/indesign.png"
+import lightroom from "../assets/lightroom.png"
 import axure from "../assets/axure.png"
 import postman from "../assets/postman.png"
 import springboot from "../assets/springboot.png"
@@ -248,6 +250,14 @@ const Home = () => {
                 <div className="skill-icon">
                   <img src={figma || "/placeholder.svg"} alt="Figma" />
                   <span>Figma</span>
+                </div>
+                <div className="skill-icon">
+                  <img src={lightroom || "/placeholder.svg"} alt="Lightroom" />
+                  <span>Ligtroom</span>
+                </div>
+                <div className="skill-icon">
+                  <img src={indesign || "/placeholder.svg"} alt="Indesign" />
+                  <span>Adobe Indesign</span>
                 </div>
                 <div className="skill-icon">
                   <img src={axure || "/placeholder.svg"} alt="Azure" />
