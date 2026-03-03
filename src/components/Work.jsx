@@ -11,6 +11,7 @@ import EventBooking from '../assets/EventBooking.png';
 import vivee from "../assets/vivee.png"
 import geetanjali from "../assets/Geetanjali.png" 
 import eventura from "../assets/eventura.png"
+import AandD from "../assets/AandD.png"
 import lovindu from "../assets/lovindu.png"
 import napco from "../assets/napco.png"
 import dashboard from "../assets/dashboard.png"
@@ -292,7 +293,7 @@ const Work = () => {
             <p className="description">
            Crafted a Figma prototype for the XRF Spectrometer Application, a lab-oriented dashboard designed for technical precision and usability. The interface includes a streamlined login experience, a modular main dashboard with real-time device status and quick actions, and an intuitive Sample Analysis screen with input forms, charts, and progress indicators. The design emphasizes visual clarity, efficient navigation, and a professional aesthetic—ensuring that lab technicians can interact with the system confidently and efficiently in high-focus environments.
            </p>
-            <a href="https://www.figma.com/proto/u8gOp12GEtsvNaOOFUdOu5/Napco?page-id=0%3A1&node-id=3-68&viewport=38%2C312%2C0.25&t=V1S0yBSyhd4QOAWm-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3%3A2" className="project-link">
+            <a href="https://www.figma.com/proto/xRf05hOFv0Eg8pMXZkeqJS/A---D---NoLoop-Tech---Napco?page-id=170%3A386&node-id=170-877&p=f&viewport=25%2C282%2C0.08&t=UGav4OShDfjUSjYo-1&scaling=scale-down&content-scaling=fixed" className="project-link">
               Prototype
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
                 <path d="M5 12h14" />
@@ -322,6 +323,26 @@ const Work = () => {
           </div>
           <div className="project-image">
             <img src={dashboard || "/placeholder.svg"} alt="dashboard" className="project-img-hover" />
+          </div>
+        </div> 
+
+        <div className="project-item" ref={(el) => projectRefs.current[4] = el}>
+          <div className="project-info">
+            <h2 className="project-title"> A Professional Digital Platform for a Reliable Legal Partner</h2>
+            <p className="technologies">Technologies: Figma</p>
+            <p className="description">
+           Designed a modern and authoritative website for A & D Associates, emphasizing clarity, professionalism, and a refined visual identity that reflects the firm’s long-standing legal expertise. Built a clean, responsive layout with intuitive navigation, enabling visitors to seamlessly explore the firm’s legal services, company secretarial solutions, and litigation capabilities. Applied a light, trustworthy color palette, strong typography, and well-structured sections to highlight the firm’s experience, credentials, and commitment to excellence. Enhanced the user journey with concise service categories, clear value propositions, and accessible contact pathways. The final design delivers a polished, reliable, and user-focused experience across all devices—effectively communicating the firm’s integrity, expertise, and comprehensive legal support.
+           </p>
+            <a href="https://www.adlawassociates.lk/" className="project-link">
+              Website
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div className="project-image">
+            <img src={AandD || "/placeholder.svg"} alt="A and D Associates" className="project-img-hover" />
           </div>
         </div> 
 

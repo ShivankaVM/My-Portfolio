@@ -358,7 +358,7 @@ const Home = () => {
 
           <div className="project" ref={(el) => (projectRefs.current[1] = el)}>
             <div className="project-content">
-              <h3>Modern Web Experience for a Senior Living Community  </h3>
+              <h3>Modern Web Experience for a Senior Living Community- Ongoing </h3>
               <p>
                Designed a warm and welcoming website for an elderly care home, using Figma to emphasize clarity, comfort, and ease of navigation. Implemented a responsive layout with soft visual hierarchy to ensure smooth browsing for all age groups and caregivers. Incorporated calming color palettes and clean typography to reflect the home’s caring and peaceful environment. UX elements include simplified menus, clear service sections, and accessible contact options for quick inquiries. The design delivers a reassuring, user-friendly experience across all devices, guiding visitors effortlessly from homepage to essential information.
                </p>
