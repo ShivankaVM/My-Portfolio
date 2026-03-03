@@ -9,6 +9,7 @@ import legalxlk from '../assets/legalxlk.png';
 import cinnamonLegends from '../assets/cinnamonLegends.png';
 import EventBooking from '../assets/EventBooking.png';
 import vivee from "../assets/vivee.png"
+import geetanjali from "../assets/Geetanjali.png" 
 import eventura from "../assets/eventura.png"
 import napco from "../assets/napco.png"
 import dashboard from "../assets/dashboard.png"
@@ -322,6 +323,27 @@ const Work = () => {
             <img src={dashboard || "/placeholder.svg"} alt="dashboard" className="project-img-hover" />
           </div>
         </div> 
+
+        <div className="project-item" ref={(el) => projectRefs.current[4] = el}>
+          <div className="project-info">
+            <h2 className="project-title"> Modern Web Experience for a Senior Living Community</h2>
+            <p className="technologies">Technologies: Figma</p>
+            <p className="description">
+           Designed a warm and welcoming website for an elderly care home, using Figma to emphasize clarity, comfort, and ease of navigation. Implemented a responsive layout with soft visual hierarchy to ensure smooth browsing for all age groups and caregivers. Incorporated calming color palettes and clean typography to reflect the home’s caring and peaceful environment. UX elements include simplified menus, clear service sections, and accessible contact options for quick inquiries. The design delivers a reassuring, user-friendly experience across all devices, guiding visitors effortlessly from homepage to essential information.
+           </p>
+            <a href="https://www.figma.com/proto/QRtf9hoEKmtOYkIEe03DjN/Lovindu-Construction?page-id=508%3A2&node-id=513-2&viewport=170%2C371%2C0.44&t=7yZmvABHYPd8ayDm-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=513%3A2" className="project-link">
+              Prototype
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div className="project-image">
+            <img src={geetanjali || "/placeholder.svg"} alt="ELders Home Website" className="project-img-hover" />
+          </div>
+        </div> 
+
       </main>
 
       <footer className="work--footer">

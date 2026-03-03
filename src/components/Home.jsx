@@ -18,7 +18,7 @@ import postman from "../assets/postman.png"
 import springboot from "../assets/springboot.png"
 import mysql from "../assets/mysql.png"
 import eventura from "../assets/eventura.png" 
-import vivee from "../assets/vivee.png" 
+import geetanjali from "../assets/Geetanjali.png" 
 import { Link } from "react-router-dom"
 
 const Home = () => {
@@ -358,11 +358,11 @@ const Home = () => {
 
           <div className="project" ref={(el) => (projectRefs.current[1] = el)}>
             <div className="project-content">
-              <h3>Modern eCommerce Website for a Female Fashion Brand  </h3>
+              <h3>Modern Web Experience for a Senior Living Community  </h3>
               <p>
-                Designed a modern eCommerce website for a women’s fashion brand using Figma, focusing on clean aesthetics and user-centric navigation. Applied a mobile-first responsive layout with structured grids, enhancing product discovery and browsing. Incorporated soft neutral color schemes and elegant typography to reflect the brand’s feminine and minimal identity. UX features include intuitive filters, quick-add interactions, and a seamless checkout flow. The design ensures clarity, elegance, and ease of use across all devices, offering a refined shopping experience from homepage to checkout.
-              </p>
-              <a href="https://www.figma.com/proto/euiPJOjhXdQomwEijFjkdl/Vive%C3%A9?page-id=0%3A1&node-id=2003-2&viewport=280%2C229%2C0.08&t=oMFafte4EnE6IvP7-1&scaling=min-zoom&content-scaling=fixed" className="btn btn-link">
+               Designed a warm and welcoming website for an elderly care home, using Figma to emphasize clarity, comfort, and ease of navigation. Implemented a responsive layout with soft visual hierarchy to ensure smooth browsing for all age groups and caregivers. Incorporated calming color palettes and clean typography to reflect the home’s caring and peaceful environment. UX elements include simplified menus, clear service sections, and accessible contact options for quick inquiries. The design delivers a reassuring, user-friendly experience across all devices, guiding visitors effortlessly from homepage to essential information.
+               </p>
+              <a href="https://www.figma.com/proto/QRtf9hoEKmtOYkIEe03DjN/Lovindu-Construction?page-id=508%3A2&node-id=513-2&viewport=170%2C371%2C0.44&t=7yZmvABHYPd8ayDm-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=513%3A2" className="btn btn-link">
                 Prototype
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -383,8 +383,8 @@ const Home = () => {
             </div>
             <div className="project-image">
               <img
-                src={vivee || "/placeholder.svg"}
-                alt="E commerce website"
+                src={geetanjali || "/placeholder.svg"}
+                alt="eldery home website"
                 className="project-img-hover"
               />
             </div>
