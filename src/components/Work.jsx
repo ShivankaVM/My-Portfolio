@@ -11,6 +11,7 @@ import EventBooking from '../assets/EventBooking.png';
 import vivee from "../assets/vivee.png"
 import geetanjali from "../assets/Geetanjali.png" 
 import eventura from "../assets/eventura.png"
+import lovindu from "../assets/lovindu.png"
 import napco from "../assets/napco.png"
 import dashboard from "../assets/dashboard.png"
 import { Link } from "react-router-dom";
@@ -321,6 +322,26 @@ const Work = () => {
           </div>
           <div className="project-image">
             <img src={dashboard || "/placeholder.svg"} alt="dashboard" className="project-img-hover" />
+          </div>
+        </div> 
+
+        <div className="project-item" ref={(el) => projectRefs.current[4] = el}>
+          <div className="project-info">
+            <h2 className="project-title"> A Strong Digital Presence for a Trusted Construction Brand</h2>
+            <p className="technologies">Technologies: Figma</p>
+            <p className="description">
+           Designed a modern and impactful website for Lovindu Constructions, focusing on clarity, professionalism, and a strong visual identity that reflects the brand’s reliability. Built a responsive layout with clean structure and intuitive navigation to help visitors easily explore services, projects, and company values. Used a bold yet balanced color palette, strong typography, and well-spaced sections to showcase the company’s craftsmanship and industry expertise. Enhanced the user journey with clear service breakdowns, project highlights, and straightforward contact options. The final design delivers a polished, trustworthy, and user-friendly experience across all devices—effectively presenting the company’s quality and commitment.
+           </p>
+            <a href="https://www.lovinduconstruction.lk/" className="project-link">
+              Website
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="arrow-icon">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+          <div className="project-image">
+            <img src={lovindu || "/placeholder.svg"} alt="Lovindu Construction" className="project-img-hover" />
           </div>
         </div> 
 
